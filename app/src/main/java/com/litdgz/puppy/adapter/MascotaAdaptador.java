@@ -1,5 +1,6 @@
-package com.litdgz.puppy;
+package com.litdgz.puppy.adapter;
 
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,13 +11,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.litdgz.puppy.pojo.Mascota;
+import com.litdgz.puppy.R;
+
 import java.util.ArrayList;
 
 public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.MascotaViewHolder> {
     ArrayList<Mascota> mascotas;
+    Activity activity;
 
-    public MascotaAdaptador(ArrayList<Mascota> mascotas){
+    public MascotaAdaptador(ArrayList<Mascota> mascotas, Activity activity){
     this.mascotas = mascotas;
+    this.activity = activity;
     }
 
 

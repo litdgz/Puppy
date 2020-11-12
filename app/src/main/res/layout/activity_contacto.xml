@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/ab_main_miActionBar"
+        layout="@layout/actionbar"
+        />
+
+
+    <EditText
+        android:id="@+id/etv_nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/nombre"
+        app:layout_constraintBottom_toTopOf="@+id/btn_enviar_mensaje"
+        app:layout_constraintEnd_toEndOf="@id/ab_main_miActionBar"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ab_main_miActionBar"
+        app:layout_constraintVertical_bias="0.076" />
+
+    <EditText
+        android:id="@+id/etv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="195dp"
+        tools:layout_editor_absoluteY="438dp"
+        android:hint="@string/email"
+        app:layout_constraintLeft_toLeftOf="@+id/etv_nombre"
+        app:layout_constraintRight_toRightOf="@+id/etv_nombre"
+        app:layout_constraintTop_toBottomOf="@+id/etv_nombre"
+        android:layout_marginTop="16dp"/>
+    <EditText
+        android:id="@+id/etv_mensaje"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="195dp"
+        tools:layout_editor_absoluteY="438dp"
+        android:hint="@string/mensaje"
+        app:layout_constraintLeft_toLeftOf="@+id/etv_email"
+        app:layout_constraintRight_toRightOf="@+id/etv_email"
+        app:layout_constraintTop_toBottomOf="@+id/etv_email"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btn_enviar_mensaje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/enviar_comentario"
+        android:textSize="@dimen/letra_boton"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

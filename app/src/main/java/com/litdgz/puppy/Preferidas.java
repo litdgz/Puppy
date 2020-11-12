@@ -6,8 +6,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.view.Menu;
+
+import com.litdgz.puppy.adapter.MascotaAdaptador;
+import com.litdgz.puppy.pojo.Mascota;
 
 import java.util.ArrayList;
 
@@ -32,11 +34,18 @@ public class Preferidas extends AppCompatActivity {
         listaMascotas.setLayoutManager(llm);
         inicializarListaMascotas();
         inicializarAdaptador();
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_opciones, menu);
+        return true;
     }
 
     MascotaAdaptador adaptador;
     public void inicializarAdaptador(){
-        adaptador = new MascotaAdaptador(mascotas);
+        adaptador = new MascotaAdaptador(mascotas, this);
         listaMascotas.setAdapter(adaptador);
     }
 

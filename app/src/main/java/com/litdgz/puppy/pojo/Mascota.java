@@ -1,4 +1,4 @@
-package com.litdgz.puppy;
+package com.litdgz.puppy.pojo;
 
 import android.widget.ImageView;
 import android.widget.TextView;
