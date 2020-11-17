@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.litdgz.puppy.db.ConstructorMascotas;
 import com.litdgz.puppy.pojo.Mascota;
 import com.litdgz.puppy.R;
 
@@ -44,9 +45,10 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         mascotaViewHolder.btnhueso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int masUno = mascota.getNumeroFavoritos() + 1;
-                mascota.setNumeroFavoritos(masUno);
-                mascotaViewHolder.tvNumeroLikes.setText(String.valueOf(mascota.getNumeroFavoritos()));
+                ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
+                constructorMascotas.darLikeMascota(mascota);
+
+                mascotaViewHolder.tvNumeroLikes.setText(Integer.toString(constructorMascotas.obtenerLikesMascota(mascota)));
              }
         });
     }

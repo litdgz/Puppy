@@ -9,13 +9,17 @@ import android.os.Bundle;
 import android.view.Menu;
 
 import com.litdgz.puppy.adapter.MascotaAdaptador;
+import com.litdgz.puppy.fragments.IRecyclerViewFragmentView;
 import com.litdgz.puppy.pojo.Mascota;
+import com.litdgz.puppy.presentador.IRecyclerViewFragmentPresenter;
+import com.litdgz.puppy.presentador.RecyclerViewFragmentPresenter;
 
 import java.util.ArrayList;
 
-public class Preferidas extends AppCompatActivity {
+public class Preferidas extends AppCompatActivity implements IRecyclerViewFragmentView {
     private RecyclerView listaMascotas;
     ArrayList<Mascota> mascotas;
+    private IRecyclerViewFragmentPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +32,8 @@ public class Preferidas extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         listaMascotas = (RecyclerView) findViewById(R.id.rv_prefe_recycle_view);
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
 
-        listaMascotas.setLayoutManager(llm);
-        inicializarListaMascotas();
-        inicializarAdaptador();
+        presenter = new RecyclerViewFragmentPresenter(this, this);
 
     }
 
@@ -43,20 +43,22 @@ public class Preferidas extends AppCompatActivity {
         return true;
     }
 
-    MascotaAdaptador adaptador;
-    public void inicializarAdaptador(){
-        adaptador = new MascotaAdaptador(mascotas, this);
+
+    @Override
+    public void generarLinearLayoutVertical() {
+        LinearLayoutManager llm = new LinearLayoutManager(this);
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        listaMascotas.setLayoutManager(llm);
+    }
+
+    @Override
+    public MascotaAdaptador crearAdaptador(ArrayList<Mascota> mascotas) {
+        MascotaAdaptador adaptador = new MascotaAdaptador(mascotas, this);
+        return adaptador;
+    }
+
+    @Override
+    public void inicializarAdaptadorRV(MascotaAdaptador adaptador) {
         listaMascotas.setAdapter(adaptador);
     }
-
-    public void inicializarListaMascotas() {
-
-        mascotas = new ArrayList<>();
-        mascotas.add(new Mascota(R.drawable.corgi, "Chafa", 0));
-        mascotas.add(new Mascota(R.drawable.dot, "Dot", 0));
-        mascotas.add(new Mascota(R.drawable.choppy1, "Choppy", 0));
-        mascotas.add(new Mascota(R.drawable.soo, "Soo", 0));
-        mascotas.add(new Mascota(R.drawable.leon, "Leon", 0));
-    }
-
 }

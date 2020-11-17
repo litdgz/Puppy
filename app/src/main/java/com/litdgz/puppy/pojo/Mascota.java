@@ -4,7 +4,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Mascota {
-
+    private int idGrid;
+    private int id;
     private int foto;
     private String nombre;
     private  int numeroFavoritos;
@@ -13,6 +14,15 @@ public class Mascota {
         this.foto = foto;
         this.nombre = nombre;
         this.numeroFavoritos = numeroFavoritos;
+    }
+
+    public Mascota(int foto, int numeroFavoritos) {
+        this.foto = foto;
+        this.numeroFavoritos = numeroFavoritos;
+    }
+
+    public Mascota() {
+
     }
 
     public int getFoto() {
@@ -37,5 +47,21 @@ public class Mascota {
 
     public void setNumeroFavoritos(int numeroFavoritos) {
         this.numeroFavoritos = numeroFavoritos;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getIdGrid() {
+        return idGrid;
+    }
+
+    public void setIdGrid(int idGrid) {
+        this.idGrid = idGrid;
     }
 }

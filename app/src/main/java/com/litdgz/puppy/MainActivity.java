@@ -4,14 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
-import com.litdgz.puppy.adapter.MascotaAdaptador;
 import com.litdgz.puppy.adapter.PageAdapter;
 import com.litdgz.puppy.fragments.PerfilFragment;
 import com.litdgz.puppy.fragments.ReyclerViewFragment;
-import com.litdgz.puppy.pojo.Mascota;
 
 import android.content.Intent;
 import android.os.Bundle;
