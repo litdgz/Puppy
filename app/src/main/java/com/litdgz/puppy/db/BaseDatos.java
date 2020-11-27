@@ -102,19 +102,20 @@ public class BaseDatos extends SQLiteOpenHelper{
 
 
         while (registros.moveToNext()) {
-            Mascota mascotaActual = new Mascota();
+           /* Mascota mascotaActual = new Mascota();
 
             mascotaActual.setIdGrid(registros.getInt(0));
             mascotaActual.setFoto(registros.getInt(1));
             mascotaActual.setNumeroFavoritos(registros.getInt(2));
 
-            mascotas.add(mascotaActual);
+            mascotas.add(mascotaActual);*/
       }
         db.close();
 
         return mascotas;
 
     }
+
 
     public void insertarMascota(ContentValues contentValues){
         SQLiteDatabase db = this.getWritableDatabase();

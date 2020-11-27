@@ -9,4 +9,6 @@
     <string name="bio">Creador: Carlos Dominguez de Galapagos, santa cruz</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="_0">0</string>
+    <string name="configurar_cuenta">Configurar Cuenta</string>
 </resources>

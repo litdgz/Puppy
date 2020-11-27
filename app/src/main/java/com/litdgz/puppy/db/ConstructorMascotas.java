@@ -22,7 +22,13 @@ public class ConstructorMascotas {
     public ArrayList<Mascota> obtenerMascotas(){
 
         BaseDatos db = new BaseDatos(context);
-        insertarCincoMascotas(db);
+
+        if (db.obtenerTodasLasMascotas().size() <= 0){
+            insertarCincoMascotas(db);
+        } else {
+
+        }
+
         return db.obtenerTodasLasMascotas();
     }
 
@@ -33,6 +39,7 @@ public class ConstructorMascotas {
     }
 
     public void insertarCincoMascotas(BaseDatos db){
+
         ContentValues contentValues = new ContentValues();
         contentValues.put(ConstantesBaseDatos.TABLE_MASCOTAS_FOTO, R.drawable.corgi);
         contentValues.put(ConstantesBaseDatos.TABLE_MASCOTAS_NOMBRE, "Chafa");
@@ -62,6 +69,7 @@ public class ConstructorMascotas {
         contentValues.put(ConstantesBaseDatos.TABLE_MASCOTAS_NOMBRE, "Leon");
 
         db.insertarMascota(contentValues);
+        db.getReadableDatabase().setMaximumSize(5);
 
     }
 
@@ -109,31 +117,6 @@ public class ConstructorMascotas {
         contentValues.put(ConstantesBaseDatos.TABLE_MASCOTA_GRID_NUMERO_LIKES, 7);
 
         db.insertarMascotasGrid(contentValues);
-
-
-
-
-
-
     }
 
-    // Grid
-   /* public ArrayList<Mascota> obtenerMascotasGrid(){
-
-        ArrayList<Mascota>mascotas = new ArrayList<>();
-        mascotas.add(new Mascota(R.drawable.corgi, 5));
-        mascotas.add(new Mascota(R.drawable.corgi, 6));
-        mascotas.add(new Mascota(R.drawable.corgi, 7));
-        mascotas.add(new Mascota(R.drawable.corgi, 8));
-        mascotas.add(new Mascota(R.drawable.corgi, 1));
-        mascotas.add(new Mascota(R.drawable.corgi, 8));
-        mascotas.add(new Mascota(R.drawable.corgi, 5));
-        mascotas.add(new Mascota(R.drawable.corgi, 3));
-        mascotas.add(new Mascota(R.drawable.corgi, 1));
-        mascotas.add(new Mascota(R.drawable.corgi, 2));
-        mascotas.add(new Mascota(R.drawable.corgi, 9));
-
-        return mascotas;
-    }
-*/
 }

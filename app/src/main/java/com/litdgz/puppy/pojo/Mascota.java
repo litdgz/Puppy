@@ -10,6 +10,12 @@ public class Mascota {
     private String nombre;
     private  int numeroFavoritos;
 
+    private String idPerfil;
+    private String nombreCompleto;
+    private String urlFoto;
+    private int likes = 0;
+
+
     public Mascota(int foto, String nombre, int numeroFavoritos) {
         this.foto = foto;
         this.nombre = nombre;
@@ -19,6 +25,12 @@ public class Mascota {
     public Mascota(int foto, int numeroFavoritos) {
         this.foto = foto;
         this.numeroFavoritos = numeroFavoritos;
+    }
+
+    public Mascota(String urlFoto, String nombreCompleto, int likes){
+        this.urlFoto = urlFoto;
+        this.nombreCompleto = nombreCompleto;
+        this.likes = likes;
     }
 
     public Mascota() {
@@ -63,5 +75,38 @@ public class Mascota {
 
     public void setIdGrid(int idGrid) {
         this.idGrid = idGrid;
+    }
+
+
+    public String getIdPerfil() {
+        return idPerfil;
+    }
+
+    public void setIdPerfil(String idPerfil) {
+        this.idPerfil = idPerfil;
+    }
+
+    public String getNombreCompleto() {
+        return nombreCompleto;
+    }
+
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
+    }
+
+    public String getUrlFoto() {
+        return urlFoto;
+    }
+
+    public void setUrlFoto(String urlFoto) {
+        this.urlFoto = urlFoto;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
     }
 }

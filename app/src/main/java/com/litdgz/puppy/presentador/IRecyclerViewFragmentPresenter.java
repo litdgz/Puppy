@@ -6,6 +6,8 @@ public interface IRecyclerViewFragmentPresenter {
 
     public void obtenerMascotasBaseDatosGrid();
 
+    public void obtenerMediosRecientes();
+
     public void mostrarMascotasRV();
 
     public void mostrarMascotasRVGrid();

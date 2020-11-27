@@ -25,6 +25,7 @@ public class ReyclerViewFragment extends Fragment implements IRecyclerViewFragme
     private RecyclerView listaMascotas;
     private IRecyclerViewFragmentPresenter presenter;
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class ReyclerViewFragment extends Fragment implements IRecyclerViewFragme
         View v = inflater.inflate(R.layout.fragment_reyclerview, container, false);
         listaMascotas = (RecyclerView) v.findViewById(R.id.rv_fragment_recycle_view);
         presenter = new RecyclerViewFragmentPresenter(this, getContext());
+
 
         return  v;
     }
