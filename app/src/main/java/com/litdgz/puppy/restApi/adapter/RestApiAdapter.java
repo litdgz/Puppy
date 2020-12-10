@@ -3,6 +3,7 @@ package com.litdgz.puppy.restApi.adapter;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.litdgz.puppy.restApi.ConstantesRestApi;
+import com.litdgz.puppy.restApi.ConstantesRestApiFirebase;
 import com.litdgz.puppy.restApi.EndPointApi;
 import com.litdgz.puppy.restApi.deserializador.MascotaDeserializador;
 import com.litdgz.puppy.restApi.model.MascotaResponse;
@@ -26,5 +27,14 @@ public class RestApiAdapter {
         gsonBuilder.registerTypeAdapter(MascotaResponse.class, new MascotaDeserializador());
 
         return gsonBuilder.create();
+    }
+
+    public EndPointApi establecerConexionRestAPI(){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(ConstantesRestApiFirebase.ROOT_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        return retrofit.create(EndPointApi.class);
     }
 }

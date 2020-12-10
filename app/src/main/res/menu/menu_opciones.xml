@@ -19,4 +19,11 @@
 
     </item>
 
+    <item
+        android:id="@+id/m_recibir_notificaciones"
+        android:title="@string/menu_recibir_notificaciones"
+        android:orderInCategory="103">
+
+    </item>
+
 </menu>
